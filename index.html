@@ -45,7 +45,7 @@
   @media(max-width:680px){.navlinks{display:none;}}
 
   /* ---------- hero ---------- */
-  .hero{padding:74px 0 30px;}
+  .hero{padding-top:74px;padding-bottom:30px;}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;
     text-transform:uppercase;color:var(--ink);margin:0 0 22px;}
   .hero h1{
@@ -92,7 +92,8 @@
   .titleblock dd{margin:0;font-size:0.92rem;line-height:1.4;color:var(--ink-strong);font-weight:500;}
   @media(max-width:680px){.titleblock{grid-template-columns:1fr 1fr;}
     .titleblock div{border-right:none;border-bottom:1px solid var(--rule);}
-    .titleblock div:nth-child(odd){border-right:1px solid var(--rule);}}
+    .titleblock div:nth-child(odd){border-right:1px solid var(--rule);}
+    .titleblock div:nth-last-child(-n+2){border-bottom:none;}}
 
   .block{margin:34px 0;}
   .block h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;
@@ -117,7 +118,7 @@
   .metrics .val{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);
     font-size:1.5rem;letter-spacing:-0.01em;line-height:1;}
   .metrics .lab{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--muted);margin-top:8px;line-height:1.35;}
-  @media(max-width:560px){.metrics .m{border-right:none;border-bottom:1px solid var(--rule);}}
+  @media(max-width:560px){.metrics .m{border-right:none;border-bottom:1px solid var(--rule);}.metrics .m:last-child{border-bottom:none;}}
 
   /* foundation note */
   .note{padding:56px 0 8px;border-top:1px solid var(--rule);}
