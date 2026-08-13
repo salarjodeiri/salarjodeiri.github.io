@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salar Jodeiri, Product Case Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7;
+    --panel:#FFFFFF;
+    --ink:#1E3A5F;
+    --ink-strong:#152A44;
+    --text:#23262B;
+    --muted:#697180;
+    --rule:#E4E2DA;
+    --rule-strong:#CFD4DC;
+    --tint:#EEF2F7;
+    --link:#2F6091;
+    --maxw:940px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:20;background:rgba(251,250,247,0.9);
+    backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--rule);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px;}
+  .brand{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--ink);font-weight:600;white-space:nowrap;}
+  .navlinks{display:flex;gap:22px;flex-wrap:wrap;}
+  .navlinks a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
+    color:var(--muted);text-decoration:none;text-transform:uppercase;}
+  .navlinks a:hover,.navlinks a:focus-visible{color:var(--ink);}
+  @media(max-width:680px){.navlinks{display:none;}}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:74px;padding-bottom:30px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;
+    text-transform:uppercase;color:var(--ink);margin:0 0 22px;}
+  .hero h1{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
+    font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.04;letter-spacing:-0.02em;margin:0 0 24px;
+    max-width:16ch;
+  }
+  .hero .lead{font-size:1.12rem;max-width:60ch;color:var(--text);margin:0 0 40px;}
+  .hero .lead b{color:var(--ink);font-weight:600;}
+
+  /* ---------- case index ---------- */
+  .index{border-top:1px solid var(--rule-strong);}
+  .index a{
+    display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:baseline;
+    padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;
+    transition:padding-left .2s ease;
+  }
+  .index a:hover,.index a:focus-visible{padding-left:8px;}
+  .index .no{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);font-weight:600;}
+  .index .nm{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:1.15rem;color:var(--ink-strong);}
+  .index .nm small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:0.86rem;color:var(--muted);margin-top:2px;letter-spacing:0;}
+  .index .mx{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap;}
+  @media(max-width:560px){.index .mx{display:none;}.index a{grid-template-columns:34px 1fr;}}
+
+  /* ---------- case sections ---------- */
+  .case{padding:72px 0 8px;border-top:1px solid var(--rule);}
+  .case-head{margin-bottom:26px;}
+  .case-no{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;}
+  .case h2{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
+    font-size:clamp(1.6rem,3.6vw,2.35rem);line-height:1.1;letter-spacing:-0.015em;margin:12px 0 10px;max-width:24ch;
+  }
+  .case .oneline{font-size:1.06rem;color:var(--text);max-width:64ch;margin:0;}
+
+  /* title block */
+  .titleblock{
+    border:1px solid var(--rule-strong);margin:30px 0 8px;background:var(--panel);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .titleblock div{padding:14px 16px;border-right:1px solid var(--rule);}
+  .titleblock div:last-child{border-right:none;}
+  .titleblock dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 6px;}
+  .titleblock dd{margin:0;font-size:0.92rem;line-height:1.4;color:var(--ink-strong);font-weight:500;}
+  @media(max-width:680px){.titleblock{grid-template-columns:1fr 1fr;}
+    .titleblock div{border-right:none;border-bottom:1px solid var(--rule);}
+    .titleblock div:nth-child(odd){border-right:1px solid var(--rule);}
+    .titleblock div:nth-last-child(-n+2){border-bottom:none;}}
+
+  .block{margin:34px 0;}
+  .block h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--ink);margin:0 0 12px;font-weight:600;
+    padding-bottom:8px;border-bottom:1px solid var(--rule);}
+  .block p{margin:0 0 14px;max-width:70ch;}
+  .block p:last-child{margin-bottom:0;}
+  .block .dl{max-width:74ch;}
+  .dl .row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--rule);}
+  .dl .row:last-child{border-bottom:none;}
+  .dl .k{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);font-size:0.98rem;line-height:1.35;}
+  .dl .v{margin:0;color:var(--text);}
+  @media(max-width:560px){.dl .row{grid-template-columns:1fr;gap:4px;}}
+
+  /* metrics */
+  .metrics{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    border-top:2px solid var(--ink);margin:36px 0 4px;
+  }
+  .metrics .m{padding:18px 18px 18px 0;border-right:1px solid var(--rule);}
+  .metrics .m:last-child{border-right:none;}
+  .metrics .val{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);
+    font-size:1.5rem;letter-spacing:-0.01em;line-height:1;}
+  .metrics .lab{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--muted);margin-top:8px;line-height:1.35;}
+  @media(max-width:560px){.metrics .m{border-right:none;border-bottom:1px solid var(--rule);}.metrics .m:last-child{border-bottom:none;}}
+
+  /* foundation note */
+  .note{padding:56px 0 8px;border-top:1px solid var(--rule);}
+  .note h2{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
+    font-size:1.5rem;margin:12px 0 14px;letter-spacing:-0.01em;}
+  .note p{max-width:72ch;margin:0;}
+
+  /* footer */
+  footer{margin-top:64px;border-top:2px solid var(--ink);background:var(--panel);}
+  footer .wrap{padding:34px 28px 44px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-end;}
+  footer .fname{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);font-size:1.2rem;}
+  footer .ftag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  footer a{color:var(--link);text-decoration:none;font-size:0.95rem;}
+  footer a:hover{text-decoration:underline;}
+  .contact{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:2;text-align:right;}
+  @media(max-width:560px){.contact{text-align:left;}}
+
+  /* reveal (progressive enhancement: only hides when JS is present) */
+  .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .js .reveal{opacity:1;transform:none;transition:none;}
+    .index a{transition:none;}
+  }
+  a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px;}
+</style>
+<script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brand">Salar Jodeiri · Product</span>
+    <nav class="navlinks">
+      <a href="#c1">Wardrobe Mirror</a>
+      <a href="#c2">BON</a>
+      <a href="#c3">Biloba</a>
+      <a href="#c4">Neshiman</a>
+      <a href="#c5">Background</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero wrap">
+  <p class="eyebrow">Selected product work</p>
+  <h1>Complex, ambiguous problems into products people can use.</h1>
+  <p class="lead">I am a product manager with a background in architecture and urban design. I have taken a <b>data product</b> from concept to live release, built and scaled a <b>design-led product portfolio</b> from hundreds to tens of thousands of units, and turned an organically grown business into a coherent brand and product system. Five cases follow, each with the problem, the approach, the decisions, and the outcome.</p>
+
+  <nav class="index" aria-label="Case studies">
+    <a href="#c1"><span class="no">01</span><span class="nm">Wardrobe Mirror<small>A browser-based data product, from board game to live release</small></span><span class="mx">54% &rarr; 78% completion</span></a>
+    <a href="#c2"><span class="no">02</span><span class="nm">BON<small>Building and scaling a design-led product portfolio</small></span><span class="mx">~500 &rarr; 30,000+ units / yr</span></a>
+    <a href="#c3"><span class="no">03</span><span class="nm">Biloba<small>A product classification system for a growing retail brand</small></span><span class="mx">500+ products, +20% clients</span></a>
+    <a href="#c4"><span class="no">04</span><span class="nm">Neshiman<small>Redesigning a furniture collection around how it is used</small></span><span class="mx">15+ products, +10 to 15% sales</span></a>
+    <a href="#c5"><span class="no">05</span><span class="nm">Architecture &amp; urban design<small>Where the systems thinking started</small></span><span class="mx">2013 to 2018</span></a>
+  </nav>
+</header>
+
+<main>
+
+<!-- CASE 01 -->
+<section class="case" id="c1">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <span class="case-no">Case 01 / Data product</span>
+      <h2>Wardrobe Mirror: a data product from board game to live release</h2>
+      <p class="oneline">Took a research idea to a live web app across five sprints, and lifted task completion from 54% to 78% while collecting a clean dataset that produced usable findings.</p>
+    </div>
+
+    <dl class="titleblock reveal">
+      <div><dt>Role</dt><dd>Product Manager, Data Products</dd></div>
+      <div><dt>Timeframe</dt><dd>Feb to Jul 2026, 6 iterations</dd></div>
+      <div><dt>Team</dt><dd>6-person cross-functional team (data, engineering, UX, fashion, education)</dd></div>
+      <div><dt>Context</dt><dd>Applied program with an institutional client and partner institutions</dd></div>
+    </dl>
+
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>How a garment is actually worn, valued, and let go is poorly understood, yet the use phase drives most of fashion's environmental impact and sits at the center of new EU rules on product data. Existing research either scaled but ignored perceived value, or captured value but not behavior. The brief was to build an instrument that makes the gap between what people say and what they do observable for a single garment, and that people would actually finish.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p>I framed it as a product, not a survey. Each participant reflects on three real garments (a recent purchase, a favorite, and one they are ready to let go), sampling the wardrobe from entry to exit in one short session, and gets a personal profile in return. That dual value, something useful for the participant and clean data for the research, shaped every decision.</p>
+      <p>I ran delivery in Scrum across five sprints and took the instrument through six iterations, from a physical board game and decision tree to a standalone web app on a live database. I partnered with engineering and UX to define the data model and integrate a data source through an API, and I designed the product logic: a scoring engine with four behavioral value indicators and a six-archetype classifier that returns a personalized profile while producing a structured research dataset from the same interaction.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Key decisions</h3>
+      <div class="dl">
+        <div class="row"><div class="k">Completion over completeness</div><p class="v">Version 5 added questions that pushed completion time past seven minutes and caused drop-off. I read that as a measured regression, cut it back in version 6, and kept the highest-value additions optional. Finishing the session mattered more than collecting every field.</p></div>
+        <div class="row"><div class="k">Kept the trade-off visible</div><p class="v">I kept the three sections in lifecycle order for coherence, after weighing a disposal-first order that would have protected the most valuable answers from drop-off. I documented the trade-off rather than hiding it.</p></div>
+        <div class="row"><div class="k">Partial data is still data</div><p class="v">Participants can stop after any section. Rather than discard partial sessions, I kept them with a lower confidence tier, which protected sample size without overstating certainty.</p></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>Completion through all three sections rose from 54% to 78% across rounds, and median completion time fell from over seven minutes to under five. The instrument collected 500+ garment records from 148 participants, and statistical testing surfaced concrete findings, including a median value-per-use of 0.95 euro per wear and the result that purchase price did not predict how often a garment was worn. I co-authored the research paper and presented the product at the closing showcase.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">54&rarr;78%</div><div class="lab">Task completion, across rounds</div></div>
+      <div class="m"><div class="val">7&rarr;&lt;5 min</div><div class="lab">Median time to complete</div></div>
+      <div class="m"><div class="val">148</div><div class="lab">Participants, 500+ records</div></div>
+      <div class="m"><div class="val">6 / 5</div><div class="lab">Iterations across five sprints</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 02 -->
+<section class="case" id="c2">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <span class="case-no">Case 02 / Consumer product</span>
+      <h2>BON: building and scaling a design-led product portfolio</h2>
+      <p class="oneline">Turned a seasonal, unpredictable product business into a repeatable discovery-to-launch engine, scaling annual volume from about 500 to more than 30,000 units.</p>
+    </div>
+
+    <dl class="titleblock reveal">
+      <div><dt>Role</dt><dd>Product Manager, full lifecycle</dd></div>
+      <div><dt>Timeframe</dt><dd>2018 to Jan 2026</dd></div>
+      <div><dt>Team</dt><dd>Grew and led a team from 2 to 12 across product, design, sales, operations</dd></div>
+      <div><dt>Context</dt><dd>Premium stationery, extreme seasonal demand, time-sensitive stock</dd></div>
+    </dl>
+
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>BON sold premium notebooks and planners into a market with an extreme seasonal peak. Early on the business could not prepare for that peak: it lost orders and customers, tied up cash in slow stock, and ran on guesswork. Dated planners had weeks, not months, to sell before they lost their value. The problem was not demand, it was the absence of a repeatable system to decide what to make, how much, and when.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p>I built a discovery habit. Before each season I tested demand with Instagram story polls and SMS campaigns, then designed products around what customers actually asked for. I validated before committing: small pilot batches of around 1,000 units and A/B concept tests (for example a tracker versus an A5 planner, and cover variants), marketed both, and kept only what sold.</p>
+      <p>I rationalized the portfolio, cutting the range by about 40% from roughly 30 models to concentrate capital on the best sellers, while keeping a small long tail for B2B optionality. Across 15 to 20 core models and about 180 SKUs I engineered deliberate non-overlap on use, paper weight, and binding. On the supply side I stayed asset-light, partnering with the best print and binding workshops rather than buying machines, pre-printing three months ahead to beat the seasonal bottleneck, and pre-selling to retail to de-risk time-sensitive stock.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Key decisions</h3>
+      <div class="dl">
+        <div class="row"><div class="k">Make versus buy</div><p class="v">I stayed asset-light to protect speed and cash in a volatile environment, accepting higher per-unit cost and less direct control, and offset it by targeting the premium segment where quality, not price, wins.</p></div>
+        <div class="row"><div class="k">Cut breadth for shelf life</div><p class="v">I cut about 40% of the catalog even though each model had some demand, because capital efficiency and shelf life mattered more than range. Shelf life for 70% of the portfolio fell from six months to under two.</p></div>
+        <div class="row"><div class="k">Validate small, then scale</div><p class="v">Pilots and pre-sales de-risked every launch, so investment followed evidence of demand rather than preceding it.</p></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>Annual volume grew from about 500 to more than 30,000 units and the team from 2 to 12. I launched the e-commerce channel from zero to more than 9,000 orders and 7,000 customers, expanded to 35+ premium retail partners and 400+ B2B clients, and opened a UK export line. The business moved from operating at a loss to sustained profitability.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">~500&rarr;30k+</div><div class="lab">Annual units, over the arc</div></div>
+      <div class="m"><div class="val">9,000+</div><div class="lab">Online orders, 7,000+ customers</div></div>
+      <div class="m"><div class="val">400+</div><div class="lab">B2B clients, 35+ retail partners</div></div>
+      <div class="m"><div class="val">2&rarr;12</div><div class="lab">Team, across four functions</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 03 -->
+<section class="case" id="c3">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <span class="case-no">Case 03 / Product strategy</span>
+      <h2>Biloba: a classification system that let a garden center scale its expertise</h2>
+      <p class="oneline">Turned an organically grown business into a coherent, premium brand and built a naming system that let 100+ staff explain 500+ products consistently.</p>
+    </div>
+
+    <dl class="titleblock reveal">
+      <div><dt>Role</dt><dd>Product Strategy Consultant, part-time</dd></div>
+      <div><dt>Timeframe</dt><dd>Jan to Jun 2025</dd></div>
+      <div><dt>Team</dt><dd>Led a two-person writer and designer team</dd></div>
+      <div><dt>Context</dt><dd>A 100+-staff garden center moving upmarket toward B2B</dd></div>
+    </dl>
+
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>Biloba had grown organically for years into a large garden center, but its identity and product information had not kept up. Positioning was unclear, the visual and verbal identity were inconsistent, and 100+ staff (15+ in sales) struggled to categorise and explain thousands of plants and consumables to customers. The owner wanted to move upmarket and win B2B work from architects and designers, which needed a studio-level, consistent identity across every touchpoint.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p>I ran discovery through 10 interviews with the owner over five months, plus competitor and field research, and defined the mission, five customer personas across two segments (end customers and professionals), positioning, and value proposition. From there I designed a product classification and naming system: size, light, water, care, and pet-safety pictograms, packaging categories, a per-plant product guide covering 500+ plants, and names for 8 garden spaces. I brought it together as a single reference for current and future team members, delivered with a two-person team.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>New-hire sales onboarding dropped to a half-day of structured reading, and every new hire now starts with the same product knowledge. After rollout, client numbers grew 20% within a year, including new architecture studios, and in-garden customer engagement rose 15% over six months. The classification system turned scattered, person-dependent knowledge into a repeatable product the whole team could use.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">500+</div><div class="lab">Products classified, 8 spaces named</div></div>
+      <div class="m"><div class="val">&frac12; day</div><div class="lab">New-hire onboarding, from ad hoc</div></div>
+      <div class="m"><div class="val">+20%</div><div class="lab">Clients within a year</div></div>
+      <div class="m"><div class="val">+15%</div><div class="lab">In-garden engagement, 6 months</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 04 -->
+<section class="case" id="c4">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <span class="case-no">Case 04 / Consumer product</span>
+      <h2>Neshiman: redesigning a furniture collection around how it is used</h2>
+      <p class="oneline">Rebuilt the link between the showroom floor and the product range, improving and extending a designer furniture collection and equipping the sales team to explain it, which lifted product sales 10 to 15% within a year.</p>
+    </div>
+
+    <dl class="titleblock reveal">
+      <div><dt>Role</dt><dd>Product Developer (research and sales strategy)</dd></div>
+      <div><dt>Timeframe</dt><dd>2015 to 2017</dd></div>
+      <div><dt>Team</dt><dd>Partnered with furniture designers and craft workshops</dd></div>
+      <div><dt>Context</dt><dd>Designer furniture maker, 200+ staff, 5 stores nationwide</dd></div>
+    </dl>
+
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>Neshiman had grown a large collection of around 75 to 80 base models across roughly 15 categories, but the range had expanded faster than the company's read on how customers actually used and valued each piece. Products went onto the showroom floor, yet the feedback loop from the floor back into product decisions was informal, and the sales team lacked consistent information to explain what set each piece apart. The result was a collection that was hard to reason about and hard to sell.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p>I made the showroom a research source. I spent time on the floor running informal interviews with customers about their experience with the products and the brand, and paired that with research into materials, color, and form. Rather than only add new models, I took existing base models and remodeled them around what I learned, for example reworking the Daneshgah chair, and built and tested prototypes with the designers and production craftsmen before anything went to production.</p>
+      <p>On the supply side I stayed asset-light, sourcing and partnering with local craft workshops, which already produced more than half of the collection, instead of adding in-house capacity. In parallel I built sales-friendly product data and guidelines so the sales team could describe the collection consistently and point customers to the right piece for their use.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>I improved and launched 15+ seating products across sofas, chairs, and stools, and the product changes increased product sales 10 to 15% within a year. The sales material reached about 25 salespeople across 5 stores nationwide, giving new and existing staff the same product knowledge and helping raise sales by up to about 15% over the same period. The work established a repeatable habit of letting real use in the showroom shape the product range.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">15+</div><div class="lab">Products improved and launched</div></div>
+      <div class="m"><div class="val">+10 to 15%</div><div class="lab">Product sales within a year</div></div>
+      <div class="m"><div class="val">5</div><div class="lab">Stores, ~25 salespeople equipped</div></div>
+      <div class="m"><div class="val">200+</div><div class="lab">Staff, designer furniture maker</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 05 -->
+<section class="note" id="c5">
+  <div class="wrap reveal">
+    <span class="case-no">Case 05 / Foundation</span>
+    <h2>Architecture and urban design</h2>
+    <p>Before product, I practiced architecture and urban design, delivering two major projects: a 100+ unit BIM-based residential development (Revit and AutoCAD) and a large public garden on the Abbas-Abad cultural lands in central Tehran, both from master planning to detailed design. This is where I learned to hold a whole system and its finest details at once, coordinate work across disciplines, and turn ambiguous constraints into decision-ready plans. Those are the same habits product work runs on, which is why the move into product felt like a continuation rather than a change of direction.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fname">Salar Jodeiri</div>
+      <div class="ftag">Product Manager · Amsterdam</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:jodeirisalar@gmail.com">jodeirisalar@gmail.com</a><br>
+      <a href="https://linkedin.com/in/salarjodeiri">linkedin.com/in/salarjodeiri</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
