@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salar Jodeiri, Operations</title>
+<title>Salar Jodeiri, Product and Operations</title>
+<meta name="description" content="Salar Jodeiri, Product and Operations. Case studies on building products and the operating systems behind them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
     --rule-strong:#CFD4DC;
     --tint:#EEF2F7;
     --link:#2F6091;
-    --maxw:940px;
+    --maxw:960px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -29,32 +30,61 @@
     font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  @media(max-width:560px){.wrap{padding:0 16px;}}
 
   /* ---------- top bar ---------- */
   .topbar{
-    position:sticky;top:0;z-index:20;background:rgba(251,250,247,0.9);
+    position:sticky;top:0;z-index:20;background:rgba(251,250,247,0.92);
     backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--rule);
   }
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px;}
   .brand{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;
-    text-transform:uppercase;color:var(--ink);font-weight:600;white-space:nowrap;}
-  .navlinks{display:flex;gap:22px;flex-wrap:wrap;}
+    text-transform:uppercase;color:var(--ink);font-weight:600;white-space:nowrap;text-decoration:none;}
+  .navlinks{display:flex;gap:20px;flex-wrap:wrap;}
   .navlinks a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;
     color:var(--muted);text-decoration:none;text-transform:uppercase;}
   .navlinks a:hover,.navlinks a:focus-visible{color:var(--ink);}
-  @media(max-width:680px){.navlinks{display:none;}}
+  @media(max-width:900px){.navlinks{display:none;}}
 
   /* ---------- hero ---------- */
-  .hero{padding-top:74px;padding-bottom:30px;}
+  .hero{padding-top:72px;padding-bottom:24px;}
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;
     text-transform:uppercase;color:var(--ink);margin:0 0 22px;}
   .hero h1{
     font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
-    font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.04;letter-spacing:-0.02em;margin:0 0 24px;
-    max-width:18ch;
+    font-size:clamp(2.1rem,5.2vw,3.4rem);line-height:1.05;letter-spacing:-0.02em;margin:0 0 24px;
+    max-width:20ch;
   }
-  .hero .lead{font-size:1.12rem;max-width:62ch;color:var(--text);margin:0 0 40px;}
+  .hero .lead{font-size:1.12rem;max-width:64ch;color:var(--text);margin:0 0 18px;}
   .hero .lead b{color:var(--ink);font-weight:600;}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 44px;}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;
+    text-decoration:none;padding:11px 16px;border:1px solid var(--ink);color:var(--ink);background:transparent;}
+  .btn.solid{background:var(--ink);color:#fff;}
+  .btn:hover{background:var(--ink-strong);color:#fff;border-color:var(--ink-strong);}
+
+  /* snapshot strip */
+  .snap{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin:0 0 48px;}
+  .snap > div{padding:16px 16px 16px 0;border-right:1px solid var(--rule);}
+  .snap > div + div{padding-left:16px;}
+  .snap > div:last-child{border-right:none;}
+  .snap .v{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);font-size:1.25rem;line-height:1.1;}
+  .snap .l{font-size:0.82rem;color:var(--muted);margin-top:6px;line-height:1.35;}
+  @media(max-width:680px){.snap{grid-template-columns:1fr 1fr;}.snap > div:nth-child(2){border-right:none;}
+    .snap > div:nth-child(-n+2){border-bottom:1px solid var(--rule);}.snap > div:nth-child(odd){padding-left:0;}}
+
+  /* domains */
+  .sec-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin:0 0 14px;font-weight:600;}
+  .domains{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule-strong);background:var(--panel);margin:0 0 52px;}
+  .domains .d{padding:20px 20px 22px;border-right:1px solid var(--rule);}
+  .domains .d:last-child{border-right:none;}
+  .domains h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.08rem;color:var(--ink-strong);margin:0 0 8px;}
+  .domains p{margin:0 0 12px;font-size:0.93rem;line-height:1.55;}
+  .domains .refs{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.04em;color:var(--muted);}
+  .domains .refs a{color:var(--link);text-decoration:none;}
+  .domains .refs a:hover{text-decoration:underline;}
+  @media(max-width:900px){.domains{grid-template-columns:1fr 1fr;}.domains .d:nth-child(2){border-right:none;}.domains .d:nth-child(-n+2){border-bottom:1px solid var(--rule);}}
+  @media(max-width:560px){.domains{grid-template-columns:1fr;}.domains .d{border-right:none;border-bottom:1px solid var(--rule);}.domains .d:last-child{border-bottom:none;}}
 
   /* ---------- case index ---------- */
   .index{border-top:1px solid var(--rule-strong);}
@@ -76,9 +106,9 @@
   .case-no{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;}
   .case h2{
     font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
-    font-size:clamp(1.6rem,3.6vw,2.35rem);line-height:1.1;letter-spacing:-0.015em;margin:12px 0 10px;max-width:24ch;
+    font-size:clamp(1.6rem,3.6vw,2.35rem);line-height:1.1;letter-spacing:-0.015em;margin:12px 0 10px;max-width:26ch;
   }
-  .case .oneline{font-size:1.06rem;color:var(--text);max-width:64ch;margin:0;}
+  .case .oneline{font-size:1.06rem;color:var(--text);max-width:66ch;margin:0;}
 
   /* title block */
   .titleblock{
@@ -101,12 +131,27 @@
     padding-bottom:8px;border-bottom:1px solid var(--rule);}
   .block p{margin:0 0 14px;max-width:70ch;}
   .block p:last-child{margin-bottom:0;}
-  .block .dl{max-width:74ch;}
-  .dl .row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--rule);}
+  .block .dl{max-width:76ch;}
+  .dl .row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--rule);}
   .dl .row:last-child{border-bottom:none;}
   .dl .k{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);font-size:0.98rem;line-height:1.35;}
   .dl .v{margin:0;color:var(--text);}
   @media(max-width:560px){.dl .row{grid-template-columns:1fr;gap:4px;}}
+
+  .callout{background:var(--tint);border-left:3px solid var(--ink);padding:16px 20px;margin:34px 0;max-width:74ch;}
+  .callout .t{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin:0 0 6px;}
+  .callout p{margin:0;}
+
+  /* BON chapters */
+  .chapters{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;}
+  .chapters a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid var(--rule-strong);background:var(--panel);padding:9px 12px;}
+  .chapters a span{font-weight:600;margin-right:8px;}
+  .chapters a:hover{border-color:var(--ink);}
+  .chapter{margin-top:60px;padding-top:26px;border-top:2px solid var(--ink);scroll-margin-top:70px;}
+  .chapter-no{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;}
+  .chapter-title{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);font-size:clamp(1.3rem,2.8vw,1.75rem);line-height:1.15;letter-spacing:-0.01em;margin:10px 0 10px;max-width:32ch;}
+  .chapter-line{margin:0;max-width:66ch;color:var(--text);}
+  .case{scroll-margin-top:56px;}
 
   /* metrics */
   .metrics{
@@ -120,21 +165,44 @@
   .metrics .lab{font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--muted);margin-top:8px;line-height:1.35;}
   @media(max-width:560px){.metrics .m{border-right:none;border-bottom:1px solid var(--rule);}.metrics .m:last-child{border-bottom:none;}}
 
+  /* how I work */
+  .how{padding:72px 0 8px;border-top:1px solid var(--rule);}
+  .how h2{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
+    font-size:clamp(1.6rem,3.6vw,2.35rem);line-height:1.1;letter-spacing:-0.015em;margin:12px 0 10px;}
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:28px 0 8px;}
+  .principles .p{padding:18px 0;border-top:1px solid var(--rule);}
+  .principles h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;color:var(--ink-strong);margin:0 0 6px;}
+  .principles p{margin:0;font-size:0.95rem;}
+  @media(max-width:680px){.principles{grid-template-columns:1fr;}}
+  .toolkit{margin:34px 0 0;}
+  .toolkit .row{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--rule);}
+  .toolkit .row:last-child{border-bottom:none;}
+  .toolkit .k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);font-weight:600;padding-top:3px;}
+  .toolkit .v{margin:0;font-size:0.95rem;}
+  @media(max-width:560px){.toolkit .row{grid-template-columns:1fr;gap:2px;}}
+
   /* foundation note */
   .note{padding:56px 0 8px;border-top:1px solid var(--rule);}
   .note h2{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);
     font-size:1.5rem;margin:12px 0 14px;letter-spacing:-0.01em;}
   .note p{max-width:72ch;margin:0;}
 
+  /* credentials */
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:18px;}
+  .creds ul{list-style:none;margin:0;padding:0;}
+  .creds li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:0.95rem;}
+  .creds li b{color:var(--ink-strong);font-weight:600;}
+  @media(max-width:680px){.creds{grid-template-columns:1fr;}}
+
   /* footer */
-  footer{margin-top:64px;border-top:2px solid var(--ink);background:var(--panel);}
+  footer{margin-top:72px;border-top:2px solid var(--ink);background:var(--panel);}
   footer .wrap{padding:34px 28px 44px;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-end;}
   footer .fname{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ink-strong);font-size:1.2rem;}
   footer .ftag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
   footer a{color:var(--link);text-decoration:none;font-size:0.95rem;}
   footer a:hover{text-decoration:underline;}
   .contact{font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:2;text-align:right;}
-  @media(max-width:560px){.contact{text-align:left;}}
+  @media(max-width:560px){.contact{text-align:left;}footer .wrap{padding:30px 16px 40px;}}
 
   /* reveal (progressive enhancement: only hides when JS is present) */
   .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
@@ -144,6 +212,11 @@
     .js .reveal{opacity:1;transform:none;transition:none;}
     .index a{transition:none;}
   }
+  @media print{
+    .topbar,.cta{display:none;}
+    .js .reveal{opacity:1;transform:none;}
+    .case,.how{page-break-inside:auto;}
+  }
   a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px;}
 </style>
 <script>document.documentElement.className += ' js';</script>
@@ -152,28 +225,65 @@
 
 <div class="topbar">
   <div class="wrap">
-    <span class="brand">Salar Jodeiri · Operations</span>
-    <nav class="navlinks">
+    <a class="brand" href="#top">Salar Jodeiri · Product &amp; Operations</a>
+    <nav class="navlinks" aria-label="Sections">
       <a href="#c1">BON</a>
       <a href="#c2">Wardrobe Mirror</a>
       <a href="#c3">Biloba</a>
       <a href="#c4">Neshiman</a>
-      <a href="#c5">Background</a>
+      <a href="#how">How I work</a>
     </nav>
   </div>
 </div>
 
-<header class="hero wrap">
-  <p class="eyebrow">Selected operations work</p>
-  <h1>I run the whole operation, and build the systems that make it run.</h1>
-  <p class="lead">I am an operations manager. For more than four years I ran the <b>full operation of a physical-product business</b>: an external production network of more than 20 workshops, quality control, warehouse and fulfillment, inventory, production cost, and a 12-person cross-functional team. I built the systems that let it run without constant manual coordination, from a supplier grading and qualification pipeline to a live production cost model that let sales answer custom B2B requests on the spot instead of routing every one back through production. More recently I ran <b>delivery for a digital data product</b> from concept to live release. My background is in architecture and urban design. Five cases follow, each with the problem, the approach, the decisions, and the outcome.</p>
+<header class="hero wrap" id="top">
+  <p class="eyebrow">Product and Operations</p>
+  <h1>I build products and the operating systems behind them.</h1>
+  <p class="lead">I work where product meets operations. I decide what gets built from evidence, then build the supplier standards, quality routines, and internal tools that let a team deliver it reliably. For more than four years I owned the roadmap and portfolio of a consumer product range and ran the operation behind it: an external network of <b>20+ print shops and binding workshops</b>, quality control, inventory, the webshop and marketplace channels, and the <b>internal tooling</b> the range ran on.</p>
+  <p class="lead">Most recently I was Product Owner of a data product with an in-product AI support agent, taken from concept to live release in Scrum, while working across six other product teams toward one shared showcase. Each case below covers the problem, the approach, the decisions and trade-offs, and the outcome.</p>
+  <div class="cta">
+    <a class="btn solid" href="mailto:jodeirisalar@gmail.com">Email me</a>
+    <a class="btn" href="https://linkedin.com/in/salarjodeiri">LinkedIn</a>
+    <a class="btn" href="#c1">Read the cases</a>
+  </div>
+
+  <div class="snap reveal">
+    <div><div class="v">4+ years</div><div class="l">Product and operations ownership</div></div>
+    <div><div class="v">20+ workshops</div><div class="l">External production network, ~180 SKUs</div></div>
+    <div><div class="v">12 people</div><div class="l">Cross-functional team, direct team of three</div></div>
+    <div><div class="v">PSPO II</div><div class="l">Professional Scrum Product Owner, Scrum.org</div></div>
+  </div>
+
+  <p class="sec-label">Where I work</p>
+  <div class="domains reveal">
+    <div class="d">
+      <h3>Operations and supply</h3>
+      <p>Holding one standard across partners you do not control: supplier grading, daily quality checks, and capacity planned a year ahead of peak.</p>
+      <div class="refs"><a href="#c1b">01B BON operations</a></div>
+    </div>
+    <div class="d">
+      <h3>Customer journey</h3>
+      <p>From first visit to repeat purchase: a direct webshop grown from zero, 10+ marketplace channels, and a digital flow where completion rose from 54% to 78%.</p>
+      <div class="refs"><a href="#c1a">01A BON portfolio</a> · <a href="#c2">02 Wardrobe Mirror</a></div>
+    </div>
+    <div class="d">
+      <h3>Data products</h3>
+      <p>A scoring engine and archetype classifier that give users a personal result and the business a clean dataset from the same interaction.</p>
+      <div class="refs"><a href="#c2">02 Wardrobe Mirror</a> · <a href="#c1a">01A BON dashboards</a></div>
+    </div>
+    <div class="d">
+      <h3>Internal tooling</h3>
+      <p>Tools that take a colleague out of a queue: a live cost and quoting app that let sales answer custom requests without routing them through production.</p>
+      <div class="refs"><a href="#c1c">01C Cost and quoting</a> · <a href="#c3">03 Biloba</a></div>
+    </div>
+  </div>
 
   <nav class="index" aria-label="Case studies">
-    <a href="#c1"><span class="no">01</span><span class="nm">BON<small>Running and systematizing a physical-product operation</small></span><span class="mx">~500 &rarr; 30,000+ units / yr</span></a>
-    <a href="#c2"><span class="no">02</span><span class="nm">Wardrobe Mirror<small>Delivery operations for a digital data product</small></span><span class="mx">54% &rarr; 78% completion</span></a>
-    <a href="#c3"><span class="no">03</span><span class="nm">Biloba<small>A classification and documentation system for a growing brand</small></span><span class="mx">500+ items, &frac12;-day onboarding</span></a>
-    <a href="#c4"><span class="no">04</span><span class="nm">Neshiman<small>Sourcing and reshaping a furniture collection</small></span><span class="mx">15+ models into production</span></a>
-    <a href="#c5"><span class="no">05</span><span class="nm">Architecture &amp; urban design<small>Where the systems thinking started</small></span><span class="mx">2013 to 2018</span></a>
+    <a href="#c1"><span class="no">01</span><span class="nm">BON<small>Portfolio strategy, operations and supply, and internal tooling, in three chapters</small></span><span class="mx">~500 &rarr; 30,000+ units a year</span></a>
+    <a href="#c2"><span class="no">02</span><span class="nm">Wardrobe Mirror<small>A data product with an AI support agent, from concept to live release</small></span><span class="mx">54% &rarr; 78% completion</span></a>
+    <a href="#c3"><span class="no">03</span><span class="nm">Biloba<small>A product classification system that let a team scale its expertise</small></span><span class="mx">500+ items, &frac12;-day onboarding</span></a>
+    <a href="#c4"><span class="no">04</span><span class="nm">Neshiman<small>Reshaping a product range around how it is used</small></span><span class="mx">+10 to 15% product sales</span></a>
+    <a href="#c5"><span class="no">05</span><span class="nm">Architecture and urban design<small>Where the systems thinking started</small></span><span class="mx">Foundation</span></a>
   </nav>
 </header>
 
@@ -183,49 +293,151 @@
 <section class="case" id="c1">
   <div class="wrap">
     <div class="case-head reveal">
-      <span class="case-no">Case 01 / Operations</span>
-      <h2>BON: building the systems behind a physical-product operation</h2>
-      <p class="oneline">Ran the full operation of a premium stationery business, suppliers, quality, warehouse, and production cost, and built the systems that let it run without constant manual coordination, while scaling annual output from about 500 to more than 30,000 units.</p>
+      <span class="case-no">Case 01 / Product and operations</span>
+      <h2>BON: a product range, the operation behind it, and the tools that connected them</h2>
+      <p class="oneline">Over more than four years I owned the roadmap and portfolio of a premium stationery range, ran the outsourced production network that made it, and built the internal tooling that connected sales to production. The three chapters below are one system: portfolio decisions set what the workshops made, and the tooling made both faster.</p>
     </div>
 
     <dl class="titleblock reveal">
-      <div><dt>Role</dt><dd>Operations Manager</dd></div>
+      <div><dt>Role</dt><dd>Product Owner and Operations Manager</dd></div>
       <div><dt>Timeframe</dt><dd>2021 to Jan 2026</dd></div>
-      <div><dt>Team</dt><dd>Led a 12-person cross-functional team across production, warehouse, sales, operations</dd></div>
-      <div><dt>Context</dt><dd>Premium stationery, external production network, extreme seasonal demand</dd></div>
+      <div><dt>Team</dt><dd>12-person cross-functional team across product, design, sales, and operations; direct team of three</dd></div>
+      <div><dt>Scope</dt><dd>~180 SKUs in four lines, 20+ external workshops, webshop, 10+ marketplaces, 400+ B2B clients</dd></div>
     </dl>
 
+    <nav class="chapters reveal" aria-label="BON chapters">
+      <a href="#c1a"><span>A</span>Portfolio strategy</a>
+      <a href="#c1b"><span>B</span>Operations and supply</a>
+      <a href="#c1c"><span>C</span>Internal tooling</a>
+    </nav>
+
+    <div class="chapter" id="c1a">
+      <div class="reveal">
+        <span class="chapter-no">Chapter A</span>
+        <h3 class="chapter-title">Portfolio strategy: running a range as a portfolio, not a collection</h3>
+        <p class="chapter-line">Gave every line a job, let business cases and small pilots decide what got made, and grew the channels that carried it, from a direct webshop to 10+ marketplaces.</p>
+      </div>
     <div class="block reveal">
       <h3>Problem</h3>
-      <p>BON made premium notebooks and planners for a market with an extreme seasonal peak, produced through an external network of print shops and binding workshops rather than owned production. Early on the operation could not prepare for that peak: it lost orders, tied up cash in slow-moving stock, and ran on manual back-and-forth between sales and production. Dated planners had weeks, not months, to sell before they lost their value. The problem was not demand, it was the absence of repeatable systems for suppliers, quality, stock, and cost.</p>
+      <p>BON made premium notebooks, planners, and sketchbooks for a market with an extreme seasonal peak, produced through an external network of print shops and binding workshops rather than owned production. Dated planners had weeks, not months, to sell before they lost their value, so a wrong call on what to make, how much, and when showed up immediately as unsold stock. The range had grown faster than the evidence behind it. The problem was not demand. It was that too little in the range was decided from evidence, and too few products had a clear reason to exist.</p>
     </div>
 
     <div class="block reveal">
       <h3>Approach</h3>
-      <p>I turned the supply side into a managed system. I graded every workshop in the network from A to D on capability and reliability and allocated production against that grading, and I put new workshops through a staged qualification pipeline: reference checks with their existing customers, a six-month trial on current products, then responsibility step by step. Two staff visited the workshops to check output daily against specification. Ahead of each peak I planned capacity a year out, preparing workshops by supplying material, supporting hiring, and completing machinery so capacity was in place before demand arrived.</p>
-      <p>On the cost side I built a live production cost model that took continuously updated input costs from production, across printing, binding, gilding, pre-press and post-press, paper and materials, so sales could answer a custom B2B request on the spot instead of routing every one back through production. I designed internal sales and production workflows, built with Claude Code, to replace the manual coordination between the two functions. I ran dashboards on best sellers and inventory turnover to set reorder timing and production volumes across approximately 180 SKUs.</p>
+      <p><b>Every line got a job.</b> I set a stated purpose for each product line: one to drive purchases, one to expand presence in stores, one for reach, one for awareness in video and marketing, one for the gift market, and one to show the design spirit of the brand. That turned range reviews from a debate about taste into a question each product could be measured against.</p>
+      <p><b>Investment followed evidence.</b> I built roughly 20 to 30 product business cases a year in Excel, covering cost, price, margin, and positioning, informed by customer research, sales team reports, and recent best-seller data on colors and models. About half were approved for production. Before a full run, I tested demand with customer polls, A/B concept tests, and small pilots. I ran dashboards on best sellers, customer retention, and product specifications, and used them with inventory turnover to set reorder timing and production volumes across the range. Priorities across functions were set in a standing weekly cross-functional planning session.</p>
+      <p><b>Collaborations as a growth lever.</b> I worked with 30+ artists, ran 15+ exhibitions with artists as partners, and co-branded products with 15+ brands. Each season I refreshed cover materials and colors across 150+ SKUs and shipped two to three limited or special editions, created for and with artists and designers.</p>
+      <p><b>Channels and platforms.</b> I launched the direct webshop from zero, owning catalog structure, product data, and the online range, and set up and ran the listings across 10+ third-party marketplace platforms, including Digikala. I selected and rolled out the ERP and inventory system and the e-commerce platform the business ran on, and set up user accounts, roles, and access permissions across them.</p>
     </div>
 
     <div class="block reveal">
-      <h3>Key decisions</h3>
+      <h3>Key decisions and trade-offs</h3>
       <div class="dl">
-        <div class="row"><div class="k">Make versus buy</div><p class="v">I made make-versus-buy and capacity decisions across the workshop network rather than investing in owned production capacity, to protect speed and cash in a volatile environment. I accepted higher per-unit cost and offset it through specification control and faster stock turn.</p></div>
-        <div class="row"><div class="k">Prove suppliers before volume</div><p class="v">I treated reference checks and a six-month trial as a quality gate, so a workshop reached trusted status only after about two and a half years. It slowed onboarding, but it kept specification under control across an outsourced network.</p></div>
-        <div class="row"><div class="k">Cut stock cycle time</div><p class="v">I set reorder timing and production volumes to cut the time stock sat in the warehouse before selling through from six months to under two for 70% of the range, freeing working capital tied up in slow-moving stock.</p></div>
+        <div class="row"><div class="k">Cut before adding</div><p class="v">After a portfolio review on per-product performance, I cut about 40% of the catalog rather than launch into a crowded range. It meant retiring products with loyal buyers, but it freed attention and working capital for the models that earned them.</p></div>
+        <div class="row"><div class="k">Say no to half the cases</div><p class="v">Roughly half of each year's business cases did not reach production. A high rejection rate was the point: the cases that failed did so on paper, not in the warehouse.</p></div>
+        <div class="row"><div class="k">Small runs, fast signal</div><p class="v">Limited editions ran at roughly 100 to 300 units and usually sold out within a month. Keeping runs small protected cash and kept the range fresh; together, collaborations and limited editions reached roughly 10 to 15% of sales.</p></div>
+        <div class="row"><div class="k">Ship inside the season</div><p class="v">Late in a peak season the range needed a planner, a product I had never designed. I learned how and shipped it inside that same season, rather than wait a year for the next window.</p></div>
       </div>
     </div>
 
     <div class="block reveal">
       <h3>Outcome</h3>
-      <p>Annual volume grew from about 500 to more than 30,000 units, produced entirely through the external network. I grew a direct e-commerce channel to more than 9,000 orders and 7,000 customers, supplied 35+ premium retail partners and 400+ B2B clients, and opened a UK export line. With the cost model and workflow systems in place, sales and production no longer had to coordinate by hand on every order, and the operation ran on repeatable systems rather than daily firefighting.</p>
+      <p>Annual product volume grew from roughly 500 to more than 30,000 units. The webshop grew from zero to more than 9,000 orders and 7,000 customers, alongside 35+ premium retail partners, 400+ B2B clients, 10+ marketplace channels, and an export line, all carrying one consistent range. Refreshed colors sold roughly twice as fast as older ones, and about half of each year's business cases were approved for production, so the range grew on proven demand rather than on volume of ideas.</p>
     </div>
 
     <div class="metrics reveal">
-      <div class="m"><div class="val">~500&rarr;30k+</div><div class="lab">Annual units, over the period</div></div>
-      <div class="m"><div class="val">6&rarr;&lt;2 mo</div><div class="lab">Stock cycle time, 70% of the range</div></div>
-      <div class="m"><div class="val">15+ / 8+</div><div class="lab">Print and binding workshops, graded A to D</div></div>
-      <div class="m"><div class="val">12</div><div class="lab">Cross-functional team, four functions</div></div>
+      <div class="m"><div class="val">~500&rarr;30k+</div><div class="lab">Annual units produced</div></div>
+      <div class="m"><div class="val">0&rarr;9,000+</div><div class="lab">Webshop orders, 7,000 customers</div></div>
+      <div class="m"><div class="val">~40%</div><div class="lab">Catalog cut after portfolio review</div></div>
+      <div class="m"><div class="val">~2&times;</div><div class="lab">Sell-through speed, refreshed colors</div></div>
+      <div class="m"><div class="val">10-15%</div><div class="lab">Of sales from collaborations and limited editions</div></div>
     </div>
+    </div>
+
+    <div class="chapter" id="c1b">
+      <div class="reveal">
+        <span class="chapter-no">Chapter B</span>
+        <h3 class="chapter-title">Operations and supply: an outsourced network run to one standard</h3>
+        <p class="chapter-line">Graded and grew a network of 20+ print shops and binding workshops, set up daily quality inspection and staged supplier onboarding, and planned capacity a year ahead of peak.</p>
+      </div>
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>Every BON product was made outside the company, by print shops and binding workshops of very different capability. Quality and delivery depended on which workshop a job happened to land with, and demand concentrated in one short peak season, so a late or rejected batch could not be recovered by waiting. Growth made this worse: each new workshop added capacity and added risk at the same time. The range needed an operation that held one standard across partners the company did not control.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p><b>Grade, then allocate.</b> I graded every workshop from A to D on capability and reliability and allocated production against that grading. Workshops were downgraded on late response and missed deadlines, so the grade stayed a live signal rather than a label.</p>
+      <p><b>Earn volume, do not assume it.</b> I built a staged onboarding pipeline: reference checks with each workshop's existing customers, a six-month trial on current products, then responsibility increased step by step. New workshops joined the network as volume grew, each through the same gate.</p>
+      <p><b>Check quality where it is made.</b> I set up a standing process with two staff visiting the workshops, checking output daily against specification, and reporting back to the team. Delivery and quality performance was tracked in one shared sheet, and my direct team reviewed the previous day's performance and the day's issues at a board each day.</p>
+      <p><b>Capacity before demand.</b> I planned production capacity a year ahead of peak season, preparing workshops by supplying material, supporting hiring, and completing machinery, and kept substitute workshops ready. I issued and tracked purchase and production orders across the network and material suppliers, negotiated lead times, and flagged risks such as material scarcity early in monthly production reporting.</p>
+      <p><b>Inventory and fulfillment.</b> I managed third-party warehouse providers on service level, ran regular stock counts and reconciled recorded against physical stock, and used reorder data to set production volumes.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Key decisions and trade-offs</h3>
+      <div class="dl">
+        <div class="row"><div class="k">Make versus buy</div><p class="v">I produced the full range through the external network instead of investing in owned capacity. I accepted higher per-unit cost and offset it through specification control and faster stock turn.</p></div>
+        <div class="row"><div class="k">Slow trust on purpose</div><p class="v">A workshop typically reached trusted status only after about two and a half years. It slowed onboarding, but it kept specification under control across partners the company did not own.</p></div>
+        <div class="row"><div class="k">Own the failure with the client</div><p class="v">When a newly onboarded workshop could not deliver a peak-season order, I handled it directly with the client: explained the cause, compensated with the best products available, and delivered later, with adjustments outside normal practice.</p></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>Over the period, on-time delivery rose from 70% to 85%, the reject rate fell from 20% to 10%, and the return rate from 5% to 2%. Stock cycle time, the time stock sat in the warehouse before selling through, fell from six months to under two for 70% of the range, freeing working capital tied up in slow-moving stock.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">70&rarr;85%</div><div class="lab">On-time delivery</div></div>
+      <div class="m"><div class="val">20&rarr;10%</div><div class="lab">Reject rate</div></div>
+      <div class="m"><div class="val">5%&rarr;2%</div><div class="lab">Return rate</div></div>
+      <div class="m"><div class="val">6&rarr;&lt;2 mo</div><div class="lab">Stock cycle time, 70% of the range</div></div>
+    </div>
+    </div>
+
+    <div class="chapter" id="c1c">
+      <div class="reveal">
+        <span class="chapter-no">Chapter C</span>
+        <h3 class="chapter-title">Internal tooling: a cost and quoting app that took sales out of the production queue</h3>
+        <p class="chapter-line">Built with Claude Code in the final phase at BON, for the sales and production teams, so a custom B2B request could be priced on the spot.</p>
+      </div>
+    <div class="block reveal">
+      <h3>Problem</h3>
+      <p>BON served 400+ B2B clients, and almost every custom request differed in materials, finishing, and quantity. Pricing one meant combining costs across printing, binding, gilding, pre-press and post-press, paper, and materials, all of which moved with the market. Sales could not answer a client without routing the request back to production, so each quote waited in someone else's queue for 3 to 5 days, and the team completed only 1 to 2 custom requests a week.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Approach</h3>
+      <p>I treated the handoff as the product problem. The users were colleagues, and the job to be done was "give a client a reliable price without asking production." I built a live production cost app with Claude Code, fed by input costs from the production department across every process step and material, and kept it current through recurring messages to suppliers. I worked with the production and sales teams to keep the cost structure aligned with how each function actually worked, then designed the internal sales and production workflows around the app, also built with Claude Code, to replace the manual back-and-forth between the two teams.</p>
+    </div>
+
+    <div class="block reveal">
+      <h3>Key decisions</h3>
+      <div class="dl">
+        <div class="row"><div class="k">Put the answer where the question arrives</div><p class="v">The tool sat with sales, not production. The goal was not a better spreadsheet for the cost owner; it was removing the round trip for the person facing the client.</p></div>
+        <div class="row"><div class="k">Current beats precise</div><p class="v">Input prices moved constantly, so keeping the inputs fresh through a supplier routine mattered more than modeling every edge case. A slightly simpler model that was always current was trusted; a perfect one that was stale would not have been.</p></div>
+        <div class="row"><div class="k">AI as the build tool</div><p class="v">I used Claude Code to build and iterate quickly with the teams using it. The product is an internal tool, not an AI feature; AI shortened the path from problem to working software.</p></div>
+      </div>
+    </div>
+
+    <div class="block reveal">
+      <h3>Outcome</h3>
+      <p>Custom B2B quote turnaround fell from 3 to 5 days to 1 to 2 days, and to as little as four hours in some cases. Custom requests completed each week rose from 1 to 2 to 6 to 7, roughly tripling throughput on that workflow without adding people.</p>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="m"><div class="val">3-5&rarr;1-2 d</div><div class="lab">Custom quote turnaround</div></div>
+      <div class="m"><div class="val">1-2&rarr;6-7</div><div class="lab">Custom requests completed per week</div></div>
+      <div class="m"><div class="val">~3&times;</div><div class="lab">Throughput, same team</div></div>
+    </div>
+    </div>
+
+    <div class="callout reveal">
+      <p class="t">Leaving it in good shape</p>
+      <p>Before handing over the role, I documented the operation in three reference documents of about twenty pages each: the supplier network, a reference of more than 200 materials with the specification, use, and availability of each, and every contract and asset filed with access set per folder. The following peak season, the team delivered more than 50 B2B orders at over 85% on time without me.</p>
+    </div>
+
   </div>
 </section>
 
@@ -233,41 +445,47 @@
 <section class="case" id="c2">
   <div class="wrap">
     <div class="case-head reveal">
-      <span class="case-no">Case 02 / Delivery operations</span>
+      <span class="case-no">Case 02 / Data product and AI</span>
       <h2>Wardrobe Mirror: a data product from board game to live release</h2>
-      <p class="oneline">Took a research idea to a live web app across five sprints, and lifted task completion from 54% to 78% while collecting a clean dataset that produced usable findings.</p>
+      <p class="oneline">Took a research idea to a live web app with an in-product AI support agent across five sprints, lifted task completion from 54% to 78%, and collected a clean dataset that produced usable findings.</p>
     </div>
 
     <dl class="titleblock reveal">
-      <div><dt>Role</dt><dd>Delivery Operations</dd></div>
-      <div><dt>Timeframe</dt><dd>Feb to Jul 2026, 6 iterations</dd></div>
-      <div><dt>Team</dt><dd>6-person cross-functional team (data, engineering, UX, fashion, education)</dd></div>
-      <div><dt>Context</dt><dd>Applied program with an institutional client and partner institutions</dd></div>
+      <div><dt>Role</dt><dd>Product Owner</dd></div>
+      <div><dt>Timeframe</dt><dd>Feb to Jul 2026, five two-week sprints</dd></div>
+      <div><dt>Team</dt><dd>6-person cross-functional team, plus alignment with six other product teams</dd></div>
+      <div><dt>Context</dt><dd>Applied digital transformation program with an institutional client and partner institutions</dd></div>
     </dl>
 
     <div class="block reveal">
       <h3>Problem</h3>
-      <p>How a garment is actually worn, valued, and let go is poorly understood, yet the use phase drives most of fashion's environmental impact and sits at the center of new EU rules on product data. Existing research either scaled but ignored perceived value, or captured value but not behavior. The brief was to build an instrument that makes the gap between what people say and what they do observable for a single garment, and that people would actually finish.</p>
+      <p>How a garment is actually worn, valued, and let go is poorly understood, yet the use phase drives most of fashion's environmental impact and sits at the center of emerging EU Digital Product Passport requirements. Existing research either scaled but ignored perceived value, or captured value but not behavior. The brief was to build an instrument that makes the gap between what people say and what they do observable for a single garment, and that people would actually finish.</p>
     </div>
 
     <div class="block reveal">
       <h3>Approach</h3>
-      <p>I framed it as a product, not a survey. Each participant reflects on three real garments (a recent purchase, a favorite, and one they are ready to let go), sampling the wardrobe from entry to exit in one short session, and gets a personal profile in return. That dual value, something useful for the participant and clean data for the research, shaped every decision.</p>
-      <p>I ran delivery in Scrum across five sprints and took the instrument through six iterations, from a physical board game and decision tree to a standalone web app on a live database, managing the backlog on Kanban boards and running planning, refinement, reviews, and retrospectives with the team. I partnered with engineering and UX to define the data model and integrate a data source through an API, and I designed the product logic: a scoring engine with four behavioral value indicators and a six-archetype classifier that returns a personalized profile while producing a structured research dataset from the same interaction.</p>
+      <p>I framed it as a product, not a survey. Each participant reflects on three real garments (a recent purchase, a favorite, and one they are ready to let go), sampling the wardrobe from entry to exit in one short session, and gets a personal profile in return. That dual value, something useful for the user and clean data for the client, shaped every decision.</p>
+      <p>I ran delivery in Scrum and took the product through six iterations, from a physical board game and decision tree to a standalone web app on a live database. I owned the backlog end to end on Kanban boards in Trello and Notion, breaking the roadmap into epics and user stories with acceptance criteria and refining them each sprint with developers and designers. I partnered with engineering and UX on the data model, integrated a Google Sheets data source through an API, and designed the product logic: a scoring engine with four behavioral value indicators and a six-archetype classifier that returns a personalized profile while producing a structured research dataset from the same interaction. We built the working app as a team in Figma and Claude Code, and I set up a scheduled daily check and repair routine on the live app to replace manual monitoring.</p>
+      <p><b>AI inside the product.</b> I built the AI support agent: I wrote and maintained its knowledge base, designed its conversation flows and the point at which it handed off to a person, and tracked how often it resolved a question without one. We also launched a version that generated each question from the participant's previous answer.</p>
     </div>
 
     <div class="block reveal">
-      <h3>Key decisions</h3>
+      <h3>Key decisions and trade-offs</h3>
       <div class="dl">
         <div class="row"><div class="k">Completion over completeness</div><p class="v">Version 5 added questions that pushed completion time past seven minutes and caused drop-off. I read that as a measured regression, cut it back in version 6, and kept the highest-value additions optional. Finishing the session mattered more than collecting every field.</p></div>
-        <div class="row"><div class="k">Kept the trade-off visible</div><p class="v">I kept the three sections in lifecycle order for coherence, after weighing a disposal-first order that would have protected the most valuable answers from drop-off. I documented the trade-off rather than hiding it.</p></div>
+        <div class="row"><div class="k">Kept the trade-off visible</div><p class="v">I kept the three sections in lifecycle order for coherence, after weighing a disposal-first order that would have protected the most valuable answers from drop-off. I documented the trade-off for the client rather than hiding it.</p></div>
         <div class="row"><div class="k">Partial data is still data</div><p class="v">Participants can stop after any section. Rather than discard partial sessions, I kept them with a lower confidence tier, which protected sample size without overstating certainty.</p></div>
       </div>
     </div>
 
+    <div class="callout reveal">
+      <p class="t">Working across teams</p>
+      <p>Six other teams in the program, each with its own Product Owner, were building products in mental health, journalism, the history of education, and legal tech. I worked across those teams to align how each would present on showcase day and to keep every team at a comparable stage through the five sprints. The teams presented to each other to critique each other's products, ran tips and tops, and ran workshops so each team understood the others' work.</p>
+    </div>
+
     <div class="block reveal">
       <h3>Outcome</h3>
-      <p>Completion through all three sections rose from 54% to 78% across rounds, and median completion time fell from over seven minutes to under five. The instrument collected 500+ garment records from 148 participants, and statistical testing surfaced concrete findings, including a median value-per-use of 0.95 euro per wear and the result that purchase price did not predict how often a garment was worn. I co-authored the research paper and presented the product at the closing showcase.</p>
+      <p>Completion through all three sections rose from 54% to 78% across rounds, and median completion time fell from over seven minutes to under five. The product collected 500+ garment records from 148 participants, and statistical testing surfaced concrete findings, including a median value-per-use of 0.95 euro per wear and the result that purchase price did not predict how often a garment was worn. I co-authored the research paper and presented the product at the closing showcase.</p>
     </div>
 
     <div class="metrics reveal">
@@ -283,13 +501,13 @@
 <section class="case" id="c3">
   <div class="wrap">
     <div class="case-head reveal">
-      <span class="case-no">Case 03 / Process and documentation</span>
+      <span class="case-no">Case 03 / Product systems</span>
       <h2>Biloba: a classification system that let a garden center scale its expertise</h2>
       <p class="oneline">Turned scattered, person-dependent product knowledge into a documented system that let 100+ staff explain 500+ products consistently, and cut new-hire onboarding to a half-day.</p>
     </div>
 
     <dl class="titleblock reveal">
-      <div><dt>Role</dt><dd>Process and Documentation Consultant, part-time</dd></div>
+      <div><dt>Role</dt><dd>Product Strategy Consultant, part-time</dd></div>
       <div><dt>Timeframe</dt><dd>Jan to Jun 2025</dd></div>
       <div><dt>Team</dt><dd>Led a two-person writer and designer team</dd></div>
       <div><dt>Context</dt><dd>A 100+-staff garden center moving upmarket toward B2B</dd></div>
@@ -297,24 +515,24 @@
 
     <div class="block reveal">
       <h3>Problem</h3>
-      <p>Biloba had grown organically for years into a large garden center, but its product information and identity had not kept up. Positioning was unclear, the visual and verbal identity were inconsistent, and 100+ staff (15+ in sales) struggled to categorize and explain thousands of plants and consumables to customers. The owner wanted to move upmarket and win B2B work from architects and designers, which needed a consistent, studio-level system across every touchpoint.</p>
+      <p>Biloba had grown organically for years into a large garden center, but its product information and identity had not kept up. Positioning was unclear, and 100+ staff (15+ in sales) struggled to categorize and explain hundreds of plants and consumables to customers. The owner wanted to move upmarket and win B2B work from architects and designers, which needed one consistent system across every touchpoint.</p>
     </div>
 
     <div class="block reveal">
       <h3>Approach</h3>
-      <p>I ran discovery through 10 interviews with the owner over five months, plus competitor and field research, and defined the mission, five customer personas across two segments (end customers and professionals), positioning, and value proposition. From there I designed a product classification and naming system: size, light, water, care, and pet-safety pictograms, packaging categories, a per-plant product guide covering 500+ plants, and names for 8 garden spaces. I documented it as a single reference for current and future team members, delivered with a two-person team.</p>
+      <p>I ran discovery through 10 interviews with the owner over five months, plus competitor and field research, and defined the mission, five customer personas across two segments (end customers and professionals), positioning, and value proposition. From there I designed a product classification and naming system: size, light, water, care, and pet-safety pictograms, packaging categories, a per-plant product guide covering 500+ plants, and names for 8 garden spaces. I documented it in a 36-page reference for current and future team members.</p>
     </div>
 
     <div class="block reveal">
       <h3>Outcome</h3>
-      <p>New-hire sales onboarding dropped to a half-day of structured reading, and every new hire now starts with the same product knowledge. The classification system turned scattered, person-dependent knowledge into a documented reference the whole team could run from, and gave the site a consistent vocabulary across 500+ items and 8 named spaces.</p>
+      <p>New-hire sales onboarding dropped to a half-day of structured reading, and every new hire now starts with the same product knowledge. Within a year of rollout, client numbers grew 20%, including new architecture studios as B2B clients, and in-garden engagement rose 15% over six months.</p>
     </div>
 
     <div class="metrics reveal">
       <div class="m"><div class="val">500+</div><div class="lab">Items classified, 8 spaces named</div></div>
       <div class="m"><div class="val">&frac12; day</div><div class="lab">New-hire onboarding, from ad hoc</div></div>
-      <div class="m"><div class="val">10</div><div class="lab">Owner interviews over 5 months</div></div>
-      <div class="m"><div class="val">36-page</div><div class="lab">Documented reference book</div></div>
+      <div class="m"><div class="val">+20%</div><div class="lab">Clients within a year, incl. B2B studios</div></div>
+      <div class="m"><div class="val">+15%</div><div class="lab">In-garden engagement, six months</div></div>
     </div>
   </div>
 </section>
@@ -323,39 +541,66 @@
 <section class="case" id="c4">
   <div class="wrap">
     <div class="case-head reveal">
-      <span class="case-no">Case 04 / Sourcing and production</span>
-      <h2>Neshiman: sourcing and reshaping a furniture collection around how it is used</h2>
-      <p class="oneline">Widened the production network and rebuilt the link between the showroom floor and the range, taking 15+ seating models from prototype into production and equipping the sales team with consistent product specifications.</p>
+      <span class="case-no">Case 04 / Product discovery and development</span>
+      <h2>Neshiman: reshaping a product range around how it is used</h2>
+      <p class="oneline">Turned the showroom into a research source, took 15+ seating models from prototype into production, and gave the sales team consistent product information, lifting product sales 10 to 15% within a year.</p>
     </div>
 
     <dl class="titleblock reveal">
-      <div><dt>Role</dt><dd>Sourcing and Production Coordination</dd></div>
+      <div><dt>Role</dt><dd>Product Developer</dd></div>
       <div><dt>Timeframe</dt><dd>2019 to 2021</dd></div>
       <div><dt>Team</dt><dd>Partnered with furniture designers and craft workshops</dd></div>
-      <div><dt>Context</dt><dd>Designer furniture maker, 200+ staff, 5 stores nationwide</dd></div>
+      <div><dt>Context</dt><dd>Designer furniture maker, 200+ staff, 5 stores</dd></div>
     </dl>
 
     <div class="block reveal">
       <h3>Problem</h3>
-      <p>Neshiman produced a large collection of around 75 to 80 base models across roughly 15 categories, with more than half of it made by external craftsmen. The range had expanded faster than the company's read on how customers actually used and valued each piece, and faster than its production options could support. Products went onto the showroom floor, yet the feedback loop from the floor back into the range and how it was made was informal, and the sales team lacked consistent information to explain what set each piece apart.</p>
+      <p>Neshiman produced around 75 to 80 base models across roughly 15 categories, with more than half made by external craftsmen. The range had expanded faster than the company's read on how customers actually used and valued each piece. The feedback loop from the showroom floor back into the range was informal, and the sales team lacked consistent information to explain what set each piece apart.</p>
     </div>
 
     <div class="block reveal">
       <h3>Approach</h3>
-      <p>I made the showroom a research source. I spent time on the floor running informal interviews with customers about their experience with the products and the brand, and paired that with research into materials, color, and form. Rather than only add new models, I took existing base models and remodeled them around what I learned, for example reworking the Daneshgah chair, and built and tested prototypes with the designers and production craftsmen before anything went to production.</p>
-      <p>On the supply side I sourced new craft workshops and ran material research to widen production options for a collection where more than half of the models were externally made, making capacity decisions across the workshop network rather than adding in-house capacity. In parallel I built product specification data and guidelines so the sales team could describe the collection consistently and point customers to the right piece for their use.</p>
+      <p>I ran user interviews and spent time on the showroom floor talking with customers about their experience with the products and the brand, and paired that with research into materials, color, form, and use. Rather than only add new models, I remodeled existing base models around what I learned, for example reworking the Daneshgah chair, and built and tested prototypes with designers and craftsmen before anything went to production. In parallel I sourced new workshops to widen production options, and built product specification data and guidelines so the sales team could describe the collection consistently and point customers to the right piece.</p>
     </div>
 
     <div class="block reveal">
       <h3>Outcome</h3>
-      <p>I took 15+ seating models across sofas, chairs, and stools from prototype into production, and built product specification data and guidelines that reached about 25 salespeople across 5 stores nationwide, giving new and existing staff the same product knowledge. The work established a repeatable habit of letting real use in the showroom shape both the range and how it was sourced and made.</p>
+      <p>I took 15+ seating models across sofas, chairs, and stools from prototype into production, and the product changes increased product sales 10 to 15% within one year. The specification data and guidelines reached about 25 salespeople across 5 stores, giving new and existing staff the same product knowledge.</p>
     </div>
 
     <div class="metrics reveal">
       <div class="m"><div class="val">15+</div><div class="lab">Models taken into production</div></div>
-      <div class="m"><div class="val">50%+</div><div class="lab">Collection made by external craftsmen</div></div>
-      <div class="m"><div class="val">5</div><div class="lab">Stores, ~25 salespeople equipped</div></div>
-      <div class="m"><div class="val">200+</div><div class="lab">Staff, designer furniture maker</div></div>
+      <div class="m"><div class="val">+10-15%</div><div class="lab">Product sales within a year</div></div>
+      <div class="m"><div class="val">5 / ~25</div><div class="lab">Stores and salespeople equipped</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="case-no">How I work</span>
+      <h2>Principles, each with the evidence behind it</h2>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><h3>Every product needs a job</h3><p>At BON each line had one stated purpose, so reviews measured products against it instead of against opinion.</p></div>
+      <div class="p"><h3>Let the evidence say no</h3><p>About half of 20 to 30 yearly business cases were not approved, and about 40% of the catalog was cut after review.</p></div>
+      <div class="p"><h3>Protect the outcome metric, not the scope</h3><p>At Wardrobe Mirror I rolled back a version that added value on paper but cost completion in practice.</p></div>
+      <div class="p"><h3>When the process is the bottleneck, build the tool</h3><p>The cost and quoting app removed a handoff that no amount of process discipline would have fixed.</p></div>
+      <div class="p"><h3>Align teams around a shared standard</h3><p>A weekly cross-functional planning session at BON; shared showcase standards across seven product teams at Wardrobe Mirror.</p></div>
+      <div class="p"><h3>Standards before scale</h3><p>Every workshop was graded A to D and new ones earned volume through a six-month trial, so growth did not outrun quality.</p></div>
+      <div class="p"><h3>Plan capacity before demand</h3><p>Workshops were prepared a year ahead of peak, with material, hiring support, and substitutes in place before orders arrived.</p></div>
+      <div class="p"><h3>Build something that runs without me</h3><p>After the handover, the team delivered the next peak season at over 85% on time.</p></div>
+    </div>
+
+    <div class="toolkit reveal">
+      <div class="row"><div class="k">Prioritization</div><p class="v">RICE, ICE, MoSCoW, impact versus effort, Kano, SWOT</p></div>
+      <div class="row"><div class="k">Discovery</div><p class="v">Customer and stakeholder interviews, personas, Value Proposition Canvas, polls, A/B concept tests, small pilots, business cases</p></div>
+      <div class="row"><div class="k">Operations</div><p class="v">Supplier grading and staged onboarding, quality inspection against specification, capacity planning, purchase and production orders, lead times, stock counts and reconciliation, third-party warehouse management, ERP and inventory systems</p></div>
+      <div class="row"><div class="k">Delivery</div><p class="v">Scrum and Kanban, two-week sprints, epics, user stories and acceptance criteria, refinement, reviews and retrospectives; Jira, Trello, Notion, Slack</p></div>
+      <div class="row"><div class="k">Data and AI</div><p class="v">Product analytics and dashboards, Google Analytics, Excel (advanced), SQL (working knowledge), statistical testing; Claude Code, Claude, ChatGPT, NotebookLM; Figma</p></div>
+      <div class="row"><div class="k">Team practice</div><p class="v">One-to-ones, anonymous tips and tops, Situation-Behavior-Impact feedback, personal user manuals, retrospectives run as a conversation, Kanban boards that make every role visible</p></div>
     </div>
   </div>
 </section>
@@ -365,7 +610,26 @@
   <div class="wrap reveal">
     <span class="case-no">Case 05 / Foundation</span>
     <h2>Architecture and urban design</h2>
-    <p>Before operations and product, I practiced architecture and urban design, delivering two major projects from master planning through detailed technical documentation: a 100+ unit BIM-based residential development (Revit and AutoCAD) and a large public garden on the Abbas-Abad cultural lands in central Tehran. This is where I learned to hold a whole system and its finest details at once, coordinate work across disciplines, and turn ambiguous constraints into decision-ready documentation that other people had to execute from. Those are the same habits operations work runs on, which is why the move into operations felt like a continuation rather than a change of direction.</p>
+    <p>Before product, I practiced architecture and urban design, delivering two major projects from master planning through detailed technical documentation: a 100+ unit BIM-based residential development (Revit and AutoCAD) and a large public cultural garden. I coordinated client requirements with architecture and engineering teams, prepared drawings for planning approval, and worked on site with the contractors building the work. This is where I learned to hold a whole system and its finest details at once, and to turn ambiguous constraints into documentation other people could execute from. Product work runs on the same habits.</p>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="note" id="creds">
+  <div class="wrap reveal">
+    <span class="case-no">Credentials</span>
+    <div class="creds">
+      <ul>
+        <li><b>Professional Scrum Product Owner II (PSPO II)</b>, Scrum.org</li>
+        <li><b>Digital Product Management Specialization</b>, UVA Darden School of Business</li>
+        <li><b>Product Management Bootcamp</b> certificate</li>
+      </ul>
+      <ul>
+        <li><b>MBA</b>, Bahar Institute</li>
+        <li><b>M.A. Urban Design</b>, thesis on smart cities and ICT integration</li>
+        <li><b>B.A. Architecture</b>, Shahid Beheshti University</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -375,7 +639,7 @@
   <div class="wrap">
     <div>
       <div class="fname">Salar Jodeiri</div>
-      <div class="ftag">Operations Manager · Amsterdam</div>
+      <div class="ftag">Product and Operations · Netherlands</div>
     </div>
     <div class="contact">
       <a href="mailto:jodeirisalar@gmail.com">jodeirisalar@gmail.com</a><br>
